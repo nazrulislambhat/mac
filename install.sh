@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # One-command Mac restore. Safe to re-run.
-#   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nazrulislambhat/mac-setup/main/install.sh)"
+#   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nazrulislambhat/mac/main/install.sh)"
 set -euo pipefail
 
-REPO_RAW="https://raw.githubusercontent.com/nazrulislambhat/mac-setup/main"
+REPO_RAW="https://raw.githubusercontent.com/nazrulislambhat/mac/main"
 NODE_VERSION="22"
 FAILED=0
 
@@ -62,13 +62,13 @@ touch "$HOME/.zshrc" "$HOME/.zprofile"
 grep -q 'brew shellenv' "$HOME/.zprofile" || echo "eval \"\$($BREW_BIN shellenv)\"" >> "$HOME/.zprofile"
 grep -q 'nvm.sh' "$HOME/.zshrc" || cat >> "$HOME/.zshrc" <<'ZSH'
 
-# nvm (added by mac-setup)
+# nvm (added by mac)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
 ZSH
 grep -q 'powerlevel10k' "$HOME/.zshrc" || cat >> "$HOME/.zshrc" <<'ZSH'
 
-# powerlevel10k (added by mac-setup)
+# powerlevel10k (added by mac)
 source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
 ZSH
 
